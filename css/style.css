@@ -1051,6 +1051,387 @@ main {
 }
 
 
+
+
+/* =========================================================
+   CONCEPTS PAGE
+   ========================================================= */
+
+
+/* ================= CONCEPT INTRO ================= */
+
+.concepts-intro {
+    max-width: 760px;
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+
+/* ================= COMPARISON SECTION ================= */
+
+.comparison-section {
+    margin-bottom: 28px;
+}
+
+
+.comparison-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background: var(--surface);
+}
+
+
+.comparison-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary),
+            var(--blue)
+        );
+}
+
+
+/* ================= COMPARISON HEADER ================= */
+
+.comparison-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.comparison-number {
+    color: var(--primary);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.comparison-title {
+    margin-top: 4px;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+
+.comparison-description {
+    max-width: 560px;
+
+    color: var(--text-muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* ================= COMPARISON BODY ================= */
+
+.comparison-body {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        70px
+        minmax(0, 1fr);
+}
+
+
+.comparison-side {
+    padding: 30px;
+}
+
+
+.comparison-side:first-child {
+    border-right: 1px solid var(--border);
+}
+
+
+.comparison-side:last-child {
+    border-left: 1px solid var(--border);
+}
+
+
+.comparison-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-bottom: 14px;
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    background: var(--primary-soft);
+
+    color: var(--primary);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+}
+
+
+.comparison-side h3 {
+    margin-bottom: 10px;
+
+    font-size: 1.45rem;
+}
+
+
+.comparison-side > p {
+    margin-bottom: 20px;
+
+    color: var(--text-muted);
+
+    font-size: 0.92rem;
+}
+
+
+/* ================= COMPARISON POINTS ================= */
+
+.comparison-points {
+    display: grid;
+
+    gap: 10px;
+}
+
+
+.comparison-point {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 0.88rem;
+}
+
+
+.comparison-point::before {
+    content: "•";
+
+    flex-shrink: 0;
+
+    color: var(--primary);
+
+    font-weight: 900;
+}
+
+
+/* ================= VS ================= */
+
+.comparison-vs {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= KEY IDEA ================= */
+
+.key-idea {
+    margin-top: 18px;
+
+    padding: 18px 22px;
+
+    border: 1px solid
+        rgba(184, 255, 61, 0.18);
+
+    border-radius: var(--radius-md);
+
+    background:
+        rgba(184, 255, 61, 0.05);
+}
+
+
+.key-idea-title {
+    margin-bottom: 5px;
+
+    color: var(--primary);
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+
+.key-idea p {
+    color: var(--text-muted);
+
+    font-size: 0.88rem;
+}
+
+
+/* ================= MEMORY SECTION ================= */
+
+.concepts-memory {
+    padding: 45px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--surface),
+            #0f141e
+        );
+
+    text-align: center;
+}
+
+
+.concepts-memory h2 {
+    margin-bottom: 12px;
+
+    font-size: clamp(
+        1.8rem,
+        4vw,
+        2.6rem
+    );
+
+    letter-spacing: -1px;
+}
+
+
+.concepts-memory > p {
+    max-width: 650px;
+
+    margin-inline: auto;
+
+    color: var(--text-muted);
+}
+
+
+.memory-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.memory-item {
+    padding: 18px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: var(--bg);
+}
+
+
+.memory-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--primary);
+
+    font-size: 0.82rem;
+}
+
+
+.memory-item span {
+    color: var(--text-muted);
+
+    font-size: 0.78rem;
+}
+
+
+/* ================= CONCEPTS RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+
+    .comparison-body {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-side:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-side:last-child {
+        border-left: none;
+    }
+
+    .comparison-vs {
+        display: none;
+    }
+
+    .memory-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .comparison-header {
+        padding: 22px;
+    }
+
+    .comparison-side {
+        padding: 22px;
+    }
+
+    .concepts-memory {
+        padding: 28px 20px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
 /* =========================================================
    14. RESPONSIVE
    ========================================================= */
