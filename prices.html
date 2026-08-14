@@ -12,50 +12,96 @@
 
     <meta
         name="description"
-        content="BlockSphere - Explore Web3, blockchain concepts and decentralized technology."
+        content="BlockSphere - Live cryptocurrency prices, market data and Web3 insights."
     >
 
     <title>BlockSphere | Live Prices</title>
 
+
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
+
     <!-- Global Styles -->
-    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =====================================================
+         COINGECKO WIDGETS
+         ===================================================== -->
+
+    <!-- Global Crypto Marquee -->
+
+    <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+
+
+    <!-- Coin Static Headline -->
+
+    <script src="https://widgets.coingecko.com/gecko-coin-price-static-headline-widget.js"></script>
+
+
+    <!-- Coin Heatmap -->
+
+    <script src="https://widgets.coingecko.com/gecko-coin-heatmap-widget.js"></script>
+
 
 </head>
 
 
-<!-- ================= LIVE MARKET TICKER ================= -->
-
-<section class="market-ticker" aria-label="Live cryptocurrency prices">
-
-    <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
-
-    <gecko-coin-price-marquee-widget
-        locale="en"
-        dark-mode="true"
-        outlined="true"
-        coin-ids="bitcoin,arbitrum,polygon-ecosystem-token,binancecoin,ethereum,tether,solana,litecoin"
-        initial-currency="inr">
-    </gecko-coin-price-marquee-widget>
-
-</section>
-
-
 <body>
 
-    <!-- ================= HEADER ================= -->
+
+    <!-- =====================================================
+         GLOBAL MARKET TICKER
+         ===================================================== -->
+
+    <section
+        class="market-ticker"
+        aria-label="Live cryptocurrency prices"
+    >
+
+        <gecko-coin-price-marquee-widget
+            locale="en"
+            dark-mode="true"
+            outlined="true"
+            coin-ids="bitcoin,arbitrum,polygon-ecosystem-token,binancecoin,ethereum,tether,solana,litecoin"
+            initial-currency="inr"
+        >
+        </gecko-coin-price-marquee-widget>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
     <header class="site-header">
 
         <div class="container navbar">
+
+
+            <!-- Logo -->
 
             <a
                 href="index.html"
@@ -74,44 +120,57 @@
             </a>
 
 
+            <!-- Navigation -->
+
             <nav aria-label="Main navigation">
 
                 <ul class="nav-links">
 
                     <li>
+
                         <a
                             href="index.html"
                             class="nav-link"
                         >
                             Home
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a
                             href="concepts.html"
                             class="nav-link"
                         >
                             Concepts
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a
                             href="prices.html"
                             class="nav-link active"
                         >
                             Live Prices
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a
                             href="simulator.html"
                             class="nav-link"
                         >
                             Simulator
                         </a>
+
                     </li>
 
                 </ul>
@@ -123,376 +182,570 @@
     </header>
 
 
-    <!-- ================= MAIN ================= -->
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
 
     <main>
 
-    <!-- ================= PAGE HEADER ================= -->
 
-    <section class="page-header">
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
 
-        <div class="container page-header-inner">
+        <section class="page-header">
 
-            <div class="page-eyebrow">
-                Live Market Data
-            </div>
+            <div class="container page-header-inner">
 
-            <h1>
-                Crypto
-                <span class="gradient-text">
-                    Prices
-                </span>
-            </h1>
-
-            <p>
-                Real-time Bitcoin and Ethereum market
-                information fetched directly from the
-                CoinGecko public API.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= LIVE MARKET ================= -->
-
-    <section class="section">
-
-        <div class="container">
-
-
-            <!-- Status -->
-
-            <div class="market-status-bar">
-
-                <div>
-
-                    <div class="page-eyebrow">
-                        Market Dashboard
-                    </div>
-
-                    <strong>
-                        Current Cryptocurrency Prices
-                    </strong>
-
-                </div>
-
-
-                <div class="market-status">
-
-                    <span class="market-status-dot"></span>
-
-                    <span id="market-status-text">
-                        Connecting...
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- Price Cards -->
-
-            <div
-                id="price-container"
-                class="price-grid"
-            >
-
-
-                <!-- Bitcoin -->
-
-                <article class="price-card">
-
-                    <div class="coin-header">
-
-                        <div class="coin-info">
-
-                            <div class="coin-symbol coin-btc" aria-label="Bitcoin icon">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M12 2.5v3.2M12 18.3v3.2M15.8 6.5c1.8 0 3.2 1.4 3.2 3.2s-1.4 3.2-3.2 3.2H8.8V6.5h7zm-6.9 11.1h8.8c1.8 0 3.2 1.4 3.2 3.2s-1.4 3.2-3.2 3.2H8.9v-6.4z" fill="currentColor" opacity="0.96"/>
-                                    <path d="M8.8 6.5h6.5a3.2 3.2 0 0 1 0 6.4H8.8V6.5zm0 11.1h7.2a3.2 3.2 0 0 1 0 6.4H8.8v-6.4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-
-                            <div>
-
-                                <div class="coin-name">
-                                    Bitcoin
-                                </div>
-
-                                <div class="coin-code">
-                                    BTC / USD
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        id="bitcoin-price"
-                        class="coin-price"
-                    >
-                        —
-                    </div>
-
-
-                    <div
-                        id="bitcoin-change"
-                        class="price-change"
-                    >
-                        —
-                    </div>
-
-
-                    <div class="price-card-footer">
-
-                        <span>
-                            24H CHANGE
-                        </span>
-
-                        <span>
-                            CoinGecko
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- Ethereum -->
-
-                <article class="price-card">
-
-                    <div class="coin-header">
-
-                        <div class="coin-info">
-
-                            <div class="coin-symbol coin-eth" aria-label="Ethereum icon">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M12 2.6 5.8 12.4l6.2 3.7 6.2-3.7L12 2.6zm0 18.8 6.2-8.6-6.2 3.7-6.2-3.7 6.2 8.6z" fill="currentColor"/>
-                                </svg>
-                            </div>
-
-                            <div>
-
-                                <div class="coin-name">
-                                    Ethereum
-                                </div>
-
-                                <div class="coin-code">
-                                    ETH / USD
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        id="ethereum-price"
-                        class="coin-price"
-                    >
-                        —
-                    </div>
-
-
-                    <div
-                        id="ethereum-change"
-                        class="price-change"
-                    >
-                        —
-                    </div>
-
-
-                    <div class="price-card-footer">
-
-                        <span>
-                            24H CHANGE
-                        </span>
-
-                        <span>
-                            CoinGecko
-                        </span>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <!-- Error -->
-
-            <div
-                id="api-error"
-                class="api-error"
-            >
-            </div>
-
-
-            <!-- Refresh -->
-
-            <div class="refresh-wrapper">
-
-                <button
-                    id="refresh-prices"
-                    class="refresh-button"
-                    type="button"
-                >
-
-                    <span
-                        id="refresh-icon"
-                        class="refresh-icon"
-                    >
-                        ↻
-                    </span>
-
-                    <span id="refresh-text">
-                        Refresh Prices
-                    </span>
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= HOW IT WORKS ================= -->
-
-    <section class="section">
-
-        <div class="container">
-
-            <div class="section-header">
 
                 <div class="page-eyebrow">
-                    Behind The Data
+                    Live Market Data
                 </div>
 
-                <h2>
-                    How Live Prices Work
-                </h2>
+
+                <h1>
+
+                    Crypto
+
+                    <span class="gradient-text">
+                        Prices
+                    </span>
+
+                </h1>
+
 
                 <p>
-                    This page demonstrates how a frontend
-                    application can request external Web3
-                    data and turn the response into a useful
-                    interface.
+                    Real-time Bitcoin and Ethereum market
+                    information fetched directly from the
+                    CoinGecko public API.
                 </p>
 
-            </div>
-
-
-            <div class="live-data-info">
-
-
-                <article class="live-info-card">
-
-                    <div class="live-info-number">
-                        01 / REQUEST
-                    </div>
-
-                    <h3>
-                        API Request
-                    </h3>
-
-                    <p>
-                        JavaScript sends a request to the
-                        CoinGecko public API for Bitcoin and
-                        Ethereum price information.
-                    </p>
-
-                </article>
-
-
-                <article class="live-info-card">
-
-                    <div class="live-info-number">
-                        02 / RESPONSE
-                    </div>
-
-                    <h3>
-                        JSON Data
-                    </h3>
-
-                    <p>
-                        The API returns structured data
-                        containing current USD prices and
-                        24-hour percentage changes.
-                    </p>
-
-                </article>
-
-
-                <article class="live-info-card">
-
-                    <div class="live-info-number">
-                        03 / UI
-                    </div>
-
-                    <h3>
-                        Dynamic Interface
-                    </h3>
-
-                    <p>
-                        JavaScript processes the response
-                        and updates the price cards without
-                        reloading the page.
-                    </p>
-
-                </article>
-
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- ================= NOTE ================= -->
 
-    <section class="section">
+        <!-- =================================================
+             CUSTOM LIVE PRICE DASHBOARD
+             ================================================= -->
 
-        <div class="container">
+        <section class="section">
 
-            <div class="key-idea">
+            <div class="container">
 
-                <div class="key-idea-title">
-                    Important
+
+                <!-- Market Status -->
+
+                <div class="market-status-bar">
+
+                    <div>
+
+                        <div class="page-eyebrow">
+                            Market Dashboard
+                        </div>
+
+                        <strong>
+                            Current Cryptocurrency Prices
+                        </strong>
+
+                    </div>
+
+
+                    <div class="market-status">
+
+                        <span class="market-status-dot"></span>
+
+                        <span id="market-status-text">
+                            Connecting...
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <p>
-                    Cryptocurrency prices change continuously.
-                    The values shown here represent the data
-                    returned by CoinGecko when the request was
-                    made and are not financial advice.
 
-                </p>
+
+                <!-- Price Cards -->
+
+                <div
+                    id="price-container"
+                    class="price-grid"
+                >
+
+
+                    <!-- ==============================
+                         BITCOIN
+                         ============================== -->
+
+                    <article class="price-card">
+
+
+                        <div class="coin-header">
+
+                            <div class="coin-info">
+
+
+                                <div
+                                    class="coin-symbol coin-btc"
+                                    aria-label="Bitcoin icon"
+                                >
+
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+
+                                        <path
+                                            d="M12 2.5v3.2M12 18.3v3.2M15.8 6.5c1.8 0 3.2 1.4 3.2 3.2s-1.4 3.2-3.2 3.2H8.8V6.5h7zm-6.9 11.1h8.8c1.8 0 3.2 1.4 3.2 3.2s-1.4 3.2-3.2 3.2H8.9v-6.4z"
+                                            fill="currentColor"
+                                            opacity="0.96"
+                                        />
+
+                                        <path
+                                            d="M8.8 6.5h6.5a3.2 3.2 0 0 1 0 6.4H8.8V6.5zm0 11.1h7.2a3.2 3.2 0 0 1 0 6.4H8.8v-6.4z"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+
+                                    </svg>
+
+                                </div>
+
+
+                                <div>
+
+                                    <div class="coin-name">
+                                        Bitcoin
+                                    </div>
+
+                                    <div class="coin-code">
+                                        BTC / USD
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="bitcoin-price"
+                            class="coin-price"
+                        >
+                            —
+                        </div>
+
+
+                        <div
+                            id="bitcoin-change"
+                            class="price-change"
+                        >
+                            —
+                        </div>
+
+
+                        <div class="price-card-footer">
+
+                            <span>
+                                24H CHANGE
+                            </span>
+
+                            <span>
+                                CoinGecko API
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ==============================
+                         ETHEREUM
+                         ============================== -->
+
+                    <article class="price-card">
+
+
+                        <div class="coin-header">
+
+                            <div class="coin-info">
+
+
+                                <div
+                                    class="coin-symbol coin-eth"
+                                    aria-label="Ethereum icon"
+                                >
+
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+
+                                        <path
+                                            d="M12 2.6 5.8 12.4l6.2 3.7 6.2-3.7L12 2.6zm0 18.8 6.2-8.6-6.2 3.7-6.2-3.7 6.2 8.6z"
+                                            fill="currentColor"
+                                        />
+
+                                    </svg>
+
+                                </div>
+
+
+                                <div>
+
+                                    <div class="coin-name">
+                                        Ethereum
+                                    </div>
+
+                                    <div class="coin-code">
+                                        ETH / USD
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="ethereum-price"
+                            class="coin-price"
+                        >
+                            —
+                        </div>
+
+
+                        <div
+                            id="ethereum-change"
+                            class="price-change"
+                        >
+                            —
+                        </div>
+
+
+                        <div class="price-card-footer">
+
+                            <span>
+                                24H CHANGE
+                            </span>
+
+                            <span>
+                                CoinGecko API
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- API Error -->
+
+                <div
+                    id="api-error"
+                    class="api-error"
+                >
+                </div>
+
+
+
+                <!-- Refresh Button -->
+
+                <div class="refresh-wrapper">
+
+                    <button
+                        id="refresh-prices"
+                        class="refresh-button"
+                        type="button"
+                    >
+
+                        <span
+                            id="refresh-icon"
+                            class="refresh-icon"
+                        >
+                            ↻
+                        </span>
+
+
+                        <span id="refresh-text">
+                            Refresh Prices
+                        </span>
+
+                    </button>
+
+                </div>
+
 
             </div>
 
-        </div>
-
-    </section>
-
-</main>
+        </section>
 
 
-    <!-- ================= FOOTER ================= -->
+
+        <!-- =================================================
+             COINGECKO STATIC HEADLINE
+             ================================================= -->
+
+        <section class="section widget-section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <div class="page-eyebrow">
+                        Market Snapshot
+                    </div>
+
+
+                    <h2>
+                        Crypto Market
+                        <span class="gradient-text">
+                            Overview
+                        </span>
+                    </h2>
+
+
+                    <p>
+                        A quick market snapshot of selected
+                        major Web3 assets.
+                    </p>
+
+                </div>
+
+
+                <div class="coingecko-widget-card">
+
+                    <script src="https://widgets.coingecko.com/gecko-coin-price-static-headline-widget.js"></script>
+<gecko-coin-price-static-headline-widget locale="en" dark-mode="true" transparent-background="true" coin-ids="bitcoin,ethereum,arbitrum,polygon-ecosystem-token,tether,solana" initial-currency="inr"></gecko-coin-price-static-headline-widget>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COINGECKO HEATMAP
+             ================================================= -->
+
+        <section class="section widget-section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <div class="page-eyebrow">
+                        Market Activity
+                    </div>
+
+
+                    <h2>
+                        Crypto
+                        <span class="gradient-text">
+                            Heatmap
+                        </span>
+                    </h2>
+
+
+                    <p>
+                        Visualize the performance of the
+                        top cryptocurrencies and understand
+                        the overall market movement.
+                    </p>
+
+                </div>
+
+
+                <div class="coingecko-widget-card heatmap-card">
+
+                    <gecko-coin-heatmap-widget
+                        locale="en"
+                        dark-mode="true"
+                        transparent-background="true"
+                        top="25"
+                    >
+                    </gecko-coin-heatmap-widget>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HOW LIVE PRICES WORK
+             ================================================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <div class="page-eyebrow">
+                        Behind The Data
+                    </div>
+
+
+                    <h2>
+                        How Live Prices Work
+                    </h2>
+
+
+                    <p>
+                        This page demonstrates how a frontend
+                        application can request external Web3
+                        data and turn the response into a
+                        useful interface.
+                    </p>
+
+                </div>
+
+
+
+                <div class="live-data-info">
+
+
+                    <!-- Request -->
+
+                    <article class="live-info-card">
+
+                        <div class="live-info-number">
+                            01 / REQUEST
+                        </div>
+
+
+                        <h3>
+                            API Request
+                        </h3>
+
+
+                        <p>
+                            JavaScript sends a request to the
+                            CoinGecko public API for Bitcoin
+                            and Ethereum price information.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Response -->
+
+                    <article class="live-info-card">
+
+                        <div class="live-info-number">
+                            02 / RESPONSE
+                        </div>
+
+
+                        <h3>
+                            JSON Data
+                        </h3>
+
+
+                        <p>
+                            The API returns structured data
+                            containing current USD prices
+                            and 24-hour percentage changes.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- UI -->
+
+                    <article class="live-info-card">
+
+                        <div class="live-info-number">
+                            03 / UI
+                        </div>
+
+
+                        <h3>
+                            Dynamic Interface
+                        </h3>
+
+
+                        <p>
+                            JavaScript processes the response
+                            and updates the price cards without
+                            reloading the page.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             IMPORTANT NOTE
+             ================================================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <div class="key-idea">
+
+                    <div class="key-idea-title">
+                        Important
+                    </div>
+
+
+                    <p>
+                        Cryptocurrency prices change continuously.
+                        The values shown here represent data returned
+                        by CoinGecko when the request or widget was
+                        loaded and are not financial advice.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
     <footer class="site-footer">
 
         <div class="container footer-inner">
+
 
             <div class="footer-brand">
                 BlockSphere
@@ -502,20 +755,15 @@
             <div class="footer-meta">
 
                 <span>
-                    Built by Harshil Kholiya
+                    Built by <a href="https://hn-kholiya2.netlify.app/" rel="noopener noreferrer" class="footer-link">Harshil Kholiya</a> 
                 </span>
 
-                <a
-                    href="https://github.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="footer-link"
-                >
+                <a href="https://github.com/hnkholiya" target="_blank" rel="noopener noreferrer" class="footer-link">
                     GitHub
                 </a>
 
                 <span>
-                    Web3 Batch
+                    Atmiya University
                 </span>
 
             </div>
@@ -525,11 +773,15 @@
     </footer>
 
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
     <script src="js/main.js"></script>
 
-
-    <script src="js/main.js"></script>
     <script src="js/prices.js"></script>
+
 
 </body>
 

@@ -878,30 +878,43 @@ main {
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
 
-    gap: 12px;
-
-    align-items: center;
+    gap: 14px 10px;
+    align-items: stretch;
+    justify-items: stretch;
 }
 
 
 .flow-item {
     position: relative;
 
-    min-height: 150px;
+    min-height: 170px;
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
 
-    padding: 24px;
+    padding: 24px 20px;
 
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
 
-    background: var(--surface);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18, 23, 34, 0.96),
+            rgba(11, 13, 18, 0.98)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(184, 255, 61, 0.04);
 }
 
 
@@ -932,7 +945,10 @@ main {
 
     color: var(--primary);
 
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    min-width: 32px;
 }
 
 
@@ -1024,10 +1040,13 @@ main {
 
     .blockchain-flow {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .flow-arrow {
         transform: rotate(90deg);
+        min-height: 8px;
+        min-width: 0;
     }
 
     .explore-grid {
@@ -2514,6 +2533,142 @@ textarea.field-input {
     color: var(--text-muted);
 
     font-size: 0.85rem;
+}
+
+
+
+/* =========================================================
+   COINGECKO WIDGET SECTIONS
+   ========================================================= */
+
+.widget-section {
+    position: relative;
+}
+
+
+.coingecko-widget-card {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 110px;
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--surface),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.coingecko-widget-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    opacity: 0.75;
+}
+
+
+/* Static headline */
+
+.coingecko-widget-card
+gecko-coin-price-static-headline-widget {
+    display: block;
+
+    width: 100%;
+}
+
+
+/* Heatmap */
+
+.heatmap-card {
+    min-height: 430px;
+
+    padding: 20px;
+}
+
+
+.heatmap-card
+gecko-coin-heatmap-widget {
+    display: block;
+
+    width: 100%;
+
+    min-height: 390px;
+}
+
+
+/* ================= WIDGET RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .coingecko-widget-card {
+        padding: 16px;
+    }
+
+
+    .heatmap-card {
+        min-height: 360px;
+
+        padding: 12px;
+    }
+
+
+    .heatmap-card
+    gecko-coin-heatmap-widget {
+        min-height: 330px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .coingecko-widget-card {
+        padding: 12px;
+
+        border-radius: var(--radius-md);
+    }
+
+
+    .heatmap-card {
+        min-height: 320px;
+    }
+
+
+    .heatmap-card
+    gecko-coin-heatmap-widget {
+        min-height: 290px;
+    }
+
 }
 
 
