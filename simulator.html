@@ -127,9 +127,501 @@
 
     <main>
 
-        <!-- Page-specific content will be added later -->
+    <!-- ================= PAGE HEADER ================= -->
 
-    </main>
+    <section class="page-header">
+
+        <div class="container page-header-inner">
+
+            <div class="page-eyebrow">
+                Interactive Blockchain Lab
+            </div>
+
+            <h1>
+                Block
+                <span class="gradient-text">
+                    Simulator
+                </span>
+            </h1>
+
+            <p>
+                Mine blocks, discover nonces and see how
+                changing one block can break the chain.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SIMULATOR ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <!-- Chain Status -->
+
+            <div class="chain-status">
+
+                <div class="chain-status-info">
+
+                    <div class="chain-status-icon" aria-label="Blockchain status icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 6.8h10a2.2 2.2 0 0 1 2.2 2.2v6a2.2 2.2 0 0 1-2.2 2.2H7A2.2 2.2 0 0 1 4.8 13V9A2.2 2.2 0 0 1 7 6.8z"/>
+                            <path d="M8.5 10.5h7M8.5 13.5h5.5M12 4.8v2M12 17.2v2"/>
+                        </svg>
+                    </div>
+
+                    <div class="chain-status-text">
+
+                        <strong id="chain-status-title">
+                            Blockchain Status
+                        </strong>
+
+                        <span id="chain-status-description">
+                            Mine both blocks to create a valid chain.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="chain-status"
+                    class="block-status"
+                >
+                    Waiting
+                </div>
+
+            </div>
+
+
+            <!-- Blocks -->
+
+            <div class="blocks-grid">
+
+
+                <!-- ================= BLOCK 1 ================= -->
+
+                <article
+                    id="block-1-card"
+                    class="block-card"
+                >
+
+
+                    <div class="block-header">
+
+                        <div class="block-title">
+
+                            <div class="block-number">
+                                01
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Block 1
+                                </h3>
+
+                                <span>
+                                    Starting block
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="block-1-status"
+                            class="block-status"
+                        >
+                            Not Mined
+                        </div>
+
+                    </div>
+
+
+                    <div class="block-body">
+
+
+                        <!-- Data -->
+
+                        <div class="field-group">
+
+                            <label
+                                for="block-1-data"
+                                class="field-label"
+                            >
+                                Block Data
+                            </label>
+
+                            <textarea
+                                id="block-1-data"
+                                class="field-input"
+                            >Block 1 - Hello Blockchain!</textarea>
+
+                        </div>
+
+
+                        <!-- Previous Hash -->
+
+                        <div class="field-group">
+
+                            <label
+                                for="block-1-previous"
+                                class="field-label"
+                            >
+                                Previous Hash
+                            </label>
+
+                            <input
+                                id="block-1-previous"
+                                class="field-input"
+                                type="text"
+                                value="0000000000000000"
+                            >
+
+                        </div>
+
+
+                        <!-- Nonce -->
+
+                        <div class="field-group">
+
+                            <label
+                                for="block-1-nonce"
+                                class="field-label"
+                            >
+                                Nonce
+                            </label>
+
+                            <input
+                                id="block-1-nonce"
+                                class="field-input"
+                                type="number"
+                                min="0"
+                                value="0"
+                            >
+
+                        </div>
+
+
+                        <!-- Hash -->
+
+                        <div class="hash-box">
+
+                            <div class="hash-label">
+                                SHA-256 Hash
+                            </div>
+
+                            <div
+                                id="block-1-hash"
+                                class="hash-value empty"
+                            >
+                                Not mined yet
+                            </div>
+
+                        </div>
+
+
+                        <!-- Mine -->
+
+                        <button
+                            id="mine-block-1"
+                            class="mine-button"
+                            type="button"
+                        >
+                            Mine Block 1
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================= CONNECTOR ================= -->
+
+                <div class="chain-connector">
+
+                    <div class="chain-connector-line"></div>
+
+                    <div class="chain-connector-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <!-- ================= BLOCK 2 ================= -->
+
+                <article
+                    id="block-2-card"
+                    class="block-card"
+                >
+
+
+                    <div class="block-header">
+
+                        <div class="block-title">
+
+                            <div class="block-number">
+                                02
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Block 2
+                                </h3>
+
+                                <span>
+                                    Linked block
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="block-2-status"
+                            class="block-status"
+                        >
+                            Waiting
+                        </div>
+
+                    </div>
+
+
+                    <div class="block-body">
+
+
+                        <!-- Data -->
+
+                        <div class="field-group">
+
+                            <label
+                                for="block-2-data"
+                                class="field-label"
+                            >
+                                Block Data
+                            </label>
+
+                            <textarea
+                                id="block-2-data"
+                                class="field-input"
+                            >Block 2 - Linked to Block 1</textarea>
+
+                        </div>
+
+
+                        <!-- Previous Hash -->
+
+                        <div class="field-group">
+
+                            <label
+                                for="block-2-previous"
+                                class="field-label"
+                            >
+                                Previous Hash
+                            </label>
+
+                            <input
+                                id="block-2-previous"
+                                class="field-input"
+                                type="text"
+                                value="Waiting for Block 1..."
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <!-- Nonce -->
+
+                        <div class="field-group">
+
+                            <label
+                                for="block-2-nonce"
+                                class="field-label"
+                            >
+                                Nonce
+                            </label>
+
+                            <input
+                                id="block-2-nonce"
+                                class="field-input"
+                                type="number"
+                                min="0"
+                                value="0"
+                            >
+
+                        </div>
+
+
+                        <!-- Hash -->
+
+                        <div class="hash-box">
+
+                            <div class="hash-label">
+                                SHA-256 Hash
+                            </div>
+
+                            <div
+                                id="block-2-hash"
+                                class="hash-value empty"
+                            >
+                                Not mined yet
+                            </div>
+
+                        </div>
+
+
+                        <!-- Mine -->
+
+                        <button
+                            id="mine-block-2"
+                            class="mine-button"
+                            type="button"
+                            disabled
+                        >
+                            Mine Block 2
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="page-eyebrow">
+                    Proof of Work
+                </div>
+
+                <h2>
+                    What Is Happening
+                    Behind The Scenes?
+                </h2>
+
+                <p>
+                    The simulator uses SHA-256 hashing and
+                    repeatedly changes the nonce until the
+                    resulting hash begins with two zeroes.
+                </p>
+
+            </div>
+
+
+            <div class="mining-info">
+
+
+                <article class="mining-info-card">
+
+                    <strong>
+                        01 / HASH
+                    </strong>
+
+                    <h3>
+                        Cryptographic Fingerprint
+                    </h3>
+
+                    <p>
+                        Block data, previous hash and nonce
+                        are combined and processed using
+                        SHA-256.
+                    </p>
+
+                </article>
+
+
+                <article class="mining-info-card">
+
+                    <strong>
+                        02 / NONCE
+                    </strong>
+
+                    <h3>
+                        Proof of Work
+                    </h3>
+
+                    <p>
+                        The nonce changes repeatedly until
+                        the generated hash satisfies our
+                        simplified mining condition.
+                    </p>
+
+                </article>
+
+
+                <article class="mining-info-card">
+
+                    <strong>
+                        03 / CHAIN
+                    </strong>
+
+                    <h3>
+                        Linked Blocks
+                    </h3>
+
+                    <p>
+                        Block 2 stores Block 1's hash as
+                        its previous hash, creating the
+                        chain relationship.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= IMMUTABILITY ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="simulator-note">
+
+                <strong>
+                    CORE INSIGHT — CHAIN IMMUTABILITY
+                </strong>
+
+                <p>
+                    Change the data in Block 1 after mining it.
+                    Its hash changes, while Block 2 still contains
+                    the old hash as its previous hash. The chain
+                    relationship therefore becomes invalid until
+                    the affected blocks are mined again.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
 
 
     <!-- ================= FOOTER ================= -->
@@ -170,6 +662,7 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/simulator.js"></script>
 
 </body>
 

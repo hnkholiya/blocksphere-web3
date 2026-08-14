@@ -127,9 +127,365 @@
 
     <main>
 
-        <!-- Page-specific content will be added later -->
+    <!-- ================= PAGE HEADER ================= -->
 
-    </main>
+    <section class="page-header">
+
+        <div class="container page-header-inner">
+
+            <div class="page-eyebrow">
+                Live Market Data
+            </div>
+
+            <h1>
+                Crypto
+                <span class="gradient-text">
+                    Prices
+                </span>
+            </h1>
+
+            <p>
+                Real-time Bitcoin and Ethereum market
+                information fetched directly from the
+                CoinGecko public API.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LIVE MARKET ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <!-- Status -->
+
+            <div class="market-status-bar">
+
+                <div>
+
+                    <div class="page-eyebrow">
+                        Market Dashboard
+                    </div>
+
+                    <strong>
+                        Current Cryptocurrency Prices
+                    </strong>
+
+                </div>
+
+
+                <div class="market-status">
+
+                    <span class="market-status-dot"></span>
+
+                    <span id="market-status-text">
+                        Connecting...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Price Cards -->
+
+            <div
+                id="price-container"
+                class="price-grid"
+            >
+
+
+                <!-- Bitcoin -->
+
+                <article class="price-card">
+
+                    <div class="coin-header">
+
+                        <div class="coin-info">
+
+                            <div class="coin-symbol coin-btc" aria-label="Bitcoin icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v3.2M12 18.3v3.2M15.8 6.5c1.8 0 3.2 1.4 3.2 3.2s-1.4 3.2-3.2 3.2H8.8V6.5h7zm-6.9 11.1h8.8c1.8 0 3.2 1.4 3.2 3.2s-1.4 3.2-3.2 3.2H8.9v-6.4z" fill="currentColor" opacity="0.96"/>
+                                    <path d="M8.8 6.5h6.5a3.2 3.2 0 0 1 0 6.4H8.8V6.5zm0 11.1h7.2a3.2 3.2 0 0 1 0 6.4H8.8v-6.4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                            <div>
+
+                                <div class="coin-name">
+                                    Bitcoin
+                                </div>
+
+                                <div class="coin-code">
+                                    BTC / USD
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="bitcoin-price"
+                        class="coin-price"
+                    >
+                        —
+                    </div>
+
+
+                    <div
+                        id="bitcoin-change"
+                        class="price-change"
+                    >
+                        —
+                    </div>
+
+
+                    <div class="price-card-footer">
+
+                        <span>
+                            24H CHANGE
+                        </span>
+
+                        <span>
+                            CoinGecko
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Ethereum -->
+
+                <article class="price-card">
+
+                    <div class="coin-header">
+
+                        <div class="coin-info">
+
+                            <div class="coin-symbol coin-eth" aria-label="Ethereum icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.6 5.8 12.4l6.2 3.7 6.2-3.7L12 2.6zm0 18.8 6.2-8.6-6.2 3.7-6.2-3.7 6.2 8.6z" fill="currentColor"/>
+                                </svg>
+                            </div>
+
+                            <div>
+
+                                <div class="coin-name">
+                                    Ethereum
+                                </div>
+
+                                <div class="coin-code">
+                                    ETH / USD
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="ethereum-price"
+                        class="coin-price"
+                    >
+                        —
+                    </div>
+
+
+                    <div
+                        id="ethereum-change"
+                        class="price-change"
+                    >
+                        —
+                    </div>
+
+
+                    <div class="price-card-footer">
+
+                        <span>
+                            24H CHANGE
+                        </span>
+
+                        <span>
+                            CoinGecko
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Error -->
+
+            <div
+                id="api-error"
+                class="api-error"
+            >
+            </div>
+
+
+            <!-- Refresh -->
+
+            <div class="refresh-wrapper">
+
+                <button
+                    id="refresh-prices"
+                    class="refresh-button"
+                    type="button"
+                >
+
+                    <span
+                        id="refresh-icon"
+                        class="refresh-icon"
+                    >
+                        ↻
+                    </span>
+
+                    <span id="refresh-text">
+                        Refresh Prices
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="page-eyebrow">
+                    Behind The Data
+                </div>
+
+                <h2>
+                    How Live Prices Work
+                </h2>
+
+                <p>
+                    This page demonstrates how a frontend
+                    application can request external Web3
+                    data and turn the response into a useful
+                    interface.
+                </p>
+
+            </div>
+
+
+            <div class="live-data-info">
+
+
+                <article class="live-info-card">
+
+                    <div class="live-info-number">
+                        01 / REQUEST
+                    </div>
+
+                    <h3>
+                        API Request
+                    </h3>
+
+                    <p>
+                        JavaScript sends a request to the
+                        CoinGecko public API for Bitcoin and
+                        Ethereum price information.
+                    </p>
+
+                </article>
+
+
+                <article class="live-info-card">
+
+                    <div class="live-info-number">
+                        02 / RESPONSE
+                    </div>
+
+                    <h3>
+                        JSON Data
+                    </h3>
+
+                    <p>
+                        The API returns structured data
+                        containing current USD prices and
+                        24-hour percentage changes.
+                    </p>
+
+                </article>
+
+
+                <article class="live-info-card">
+
+                    <div class="live-info-number">
+                        03 / UI
+                    </div>
+
+                    <h3>
+                        Dynamic Interface
+                    </h3>
+
+                    <p>
+                        JavaScript processes the response
+                        and updates the price cards without
+                        reloading the page.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NOTE ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="key-idea">
+
+                <div class="key-idea-title">
+                    Important
+                </div>
+
+                <p>
+                    Cryptocurrency prices change continuously.
+                    The values shown here represent the data
+                    returned by CoinGecko when the request was
+                    made and are not financial advice.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
 
 
     <!-- ================= FOOTER ================= -->
@@ -170,6 +526,10 @@
 
 
     <script src="js/main.js"></script>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/prices.js"></script>
 
 </body>
 
